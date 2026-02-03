@@ -1,7 +1,11 @@
+import Buttons from './components/Buttons';
+
 const App = () => {
   return (
-    <div></div>
-  )
-}
+    <div className='flex justify-center items-center w-full h-screen'>
+      <Buttons />
+    </div>
+  );
+};
 
-export default App
+export default App;
