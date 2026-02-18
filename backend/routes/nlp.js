@@ -1,9 +1,24 @@
-import express from "express";
+import { Router } from "express";
 
 export const nlpRouter = () => {
-  const router = express();
+  const router = Router();
 
-  router.post("/nlp", async (req, res) => {});
+  router.post("/nlp", async (req, res) => {
+    res.json({
+      ok: true,
+      message: "You made it!"
+    })
+  });
 
   return router;
 };
+
+
+
+
+
+
+
+
+
+
