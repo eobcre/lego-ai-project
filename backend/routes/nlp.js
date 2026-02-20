@@ -1,8 +1,10 @@
 import { Router } from "express";
 import { bedrock } from "../services/bedrock.js";
+import { bedrockStub } from "../services/bedrockStub.js";
+import { normalize } from "../normalize.js";
 
 /* 
-bedrock returns json format test
+normalize test with dummy bedrock data
 */
 
 export const nlpRouter = () => {
@@ -17,17 +19,29 @@ export const nlpRouter = () => {
       }
 
       // bedrock process
-      const answer = await bedrock(text);
+      // const answer = await bedrock(text);
+
+      // test
+      const answer = await bedrockStub(text);
 
       // parse bedrock answer
+      // try {
+      //   const answerParsed = JSON.parse(answer);
+      //   return res.json({ ok: true, answerParsed, answer });
+      // } catch (err) {
+      //   console.error(err);
+      //   return res.status(500).json({ ok: false });
+      // }
+
+      // test
       try {
         const answerParsed = JSON.parse(answer);
-        return res.json({ ok: true, answerParsed, answer });
+        const normalized = normalize(answerParsed);
+        return res.json({ ok: true, answer, answerParsed, normalized });
       } catch (err) {
         console.error(err);
         return res.status(500).json({ ok: false });
       }
-      
     } catch (err) {
       console.error("NLP bedrock error:", err);
     }
