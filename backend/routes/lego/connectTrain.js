@@ -1,19 +1,18 @@
 import { PoweredUP } from "node-poweredup";
+import { sleep } from "../../utils/sleep.js";
 
 /* 
-get powered-up hub object test
-- scan and get hub object
-- timer is set to 20 sec to scan
-- if hub is not found promise will return reject
-- if hub is found promise will return resolve and get hub object
+connect hub test
+- get connect method in hub object to connect
 */
 
 export async function connectTrain() {
   // lego powered-up instance
   const poweredUP = new PoweredUP();
 
-  // timer time
+  // default ms
   const discoverTimeoutMs = 20000;
+  const connectWaitMs = 1000;
 
   // ** scan and get hub **
   const hub = await new Promise((resolve, reject) => {
@@ -35,8 +34,15 @@ export async function connectTrain() {
     console.log("Scanning...");
   });
 
+  hub.connect();
+  await sleep(connectWaitMs);
+
+  if (!hub.connect) {
+    throw new error("Hub is not connected.");
+  }
+
+  console.log("Connected!!!");
+
   // console.log("hub:", hub);
   // console.log("uuid:", hub.uuid);
-
-  return hub;
 }
