@@ -4,15 +4,19 @@ import { bedrockStub } from "../services/bedrockStub.js";
 import { normalize } from "../normalize.js";
 
 /* 
-normalize test with dummy bedrock data
+get powered-up hub object test
 */
 
-export const nlpRouter = () => {
+export const nlpRouter = (getTrain) => {
   const router = Router();
 
+  // console.log("getTrain:", getTrain());
+
+  // api
   router.post("/nlp", async (req, res) => {
-    // user text validation
     try {
+      const train = getTrain();
+
       const text = req.body?.text.trim();
       if (!text) {
         return res.status(400).json({ ok: false, error: "Text is required." });
