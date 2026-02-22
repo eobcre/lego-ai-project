@@ -2,7 +2,7 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 
-import { connectTrain } from "./connectTrain.js";
+import { connectTrain } from "./routes/lego/connectTrain.js";
 import { nlpRouter } from "./routes/nlp.js";
 
 const app = express();

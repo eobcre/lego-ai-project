@@ -1,7 +1,7 @@
 import { Router } from "express";
 import { bedrock } from "../services/bedrock.js";
 import { bedrockStub } from "../services/bedrockStub.js";
-import { normalize } from "../normalize.js";
+import { normalize } from "../utils/normalize.js";
 
 /* 
 get powered-up hub object test
