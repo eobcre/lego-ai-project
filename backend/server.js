@@ -2,7 +2,8 @@ import express from "express";
 import "dotenv/config";
 import cors from "cors";
 
-import { connectTrain } from "./routes/lego/connectTrain.js";
+import { connectTrain } from "./train/connectTrain.js";
+import { controlTrain } from "./train/controlTrain.js";
 import { nlpRouter } from "./routes/nlp.js";
 
 const app = express();
@@ -21,7 +22,8 @@ let train;
 
 const bootLego = async () => {
   try {
-    train = await connectTrain();
+    const hub = await connectTrain();
+    train = await controlTrain(hub);
     // router
     app.use(
       "/api",
