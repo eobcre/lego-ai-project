@@ -1,5 +1,4 @@
 /*
-normalize test: 
 - action validation
 - undefined, null fallback
 - applying default values for speed and duration
@@ -8,10 +7,10 @@ normalize test:
 const DEFAULT_SPEED = 30;
 const DEFAULT_DURATION = 1000;
 
-export function normalize(parsed) {
+export async function normalize(parsed) {
   // parsed bedrock returns { "action": "forward" || "backward" || "stop" }
   const actionValue = parsed?.action;
-  console.log("actionValue:", actionValue);
+  // console.log("actionValue:", actionValue);
 
   const action = actionValue.trim().toLowerCase();
 
@@ -26,5 +25,5 @@ export function normalize(parsed) {
   const durationMs = parsed.durationMs ?? DEFAULT_DURATION;
 
   // must return default value for speed and duration
-  return { action, speed: DEFAULT_SPEED, durationMs: DEFAULT_DURATION };
+  return { action, speed, durationMs };
 }

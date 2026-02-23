@@ -2,8 +2,7 @@ import { PoweredUP } from "node-poweredup";
 import { sleep } from "../utils/sleep.js";
 
 /* 
-connect hub test
-- get connect method in hub object to connect
+after the bluetooth connection, connect with lego hub
 */
 
 export async function connectTrain() {
@@ -12,7 +11,7 @@ export async function connectTrain() {
 
   // default ms
   const discoverTimeoutMs = 20000;
-  const connectWaitMs = 1000;
+  const connectWaitMs = 3000;
 
   // ** scan and get hub **
   const hub = await new Promise((resolve, reject) => {
@@ -34,10 +33,12 @@ export async function connectTrain() {
     console.log("Scanning...");
   });
 
+  // connect to hub
   hub.connect();
+
   await sleep(connectWaitMs);
 
-  if (!hub.connect) {
+  if (!hub.connected) {
     throw new error("Hub is not connected.");
   }
 
