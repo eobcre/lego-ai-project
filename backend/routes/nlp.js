@@ -40,7 +40,23 @@ export const nlpRouter = (getTrain) => {
       const normalized = await normalize(answerParsed);
 
       // speed
-      if (normalized.action === "forward") await train.forward(normalized.speed);
+      switch (normalized.action) {
+        case "forward":
+          await train.forward(normalized.speed);
+          break;
+
+        case "backward":
+          await train.backward(normalized.speed);
+          break;
+
+        case "stop":
+          await train.stop();
+          break;
+
+        default:
+          console.error("Unknown action:", normalized.action);
+          await train.stop();
+      }
       // durations ms
       await sleep(normalized.durationMs);
       await train.stop();
