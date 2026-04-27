@@ -2,7 +2,7 @@
 
 <img src="./docs/app.png" alt="Image" width="500" />
 
-### 🧠 How It Works
+## 🧠 How It Works
 
 The system will allow users to control a LEGO train using NLP.
 
@@ -25,7 +25,7 @@ Output:
 
 > Note: speed and duration are predefined as default parameters and are not controlled by user input.
 
-### 🏗 Architecture
+## 🏗 Architecture
 
 <p>
   <img src="./docs/workflow_image.png" alt="Image" width="600" />
@@ -33,7 +33,7 @@ Output:
   <sub>Architecture diagram created with Lucidchart</sub>
 </p>
 
-### 🚀 Features
+## 🚀 Features
 
 - Control a physical LEGO train using natural language commands. (e.g. "move forward", "move backward", "stop")
 - Powered by Amazon Bedrock to interpret user input and generate structured control instructions.
@@ -41,7 +41,7 @@ Output:
 - Converts unstructured human language into actionable device commands.
 - Demonstrates end-to-end AI-driven system from input to physical output.
 
-### 🛠 Tech Stack
+## 🛠 Tech Stack
 
 #### ▫️ Frontend
 
@@ -60,13 +60,13 @@ Output:
 - [node-poweredup](https://github.com/nathankellenicki/node-poweredup) (LEGO device control)
 - Bluetooth
 
-### ⌘ Supported Commands
+## ⌘ Supported Commands
 
 - "Move forward"
 - "Move backward"
 - "Stop"
 
-### 📦 Installation
+## 📦 Installation
 
 This project requires specific hardware and environment setup to run.
 
