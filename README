@@ -16,7 +16,7 @@ Input:
 
 Output:
 
-```json
+```
 {
   "action": "forward",
   "speed": 30,
@@ -36,11 +36,11 @@ Output:
 
 ### 🚀 Features
 
-- Control a physical LEGO train using natural language commands (e.g. "move forward", "move backward", "stop")
-- Powered by Amazon Bedrock to interpret user input and generate structured control instructions
-- Real-time interaction between user input and hardware execution
-- Converts unstructured human language into actionable device commands
-- Demonstrates end-to-end AI-driven system from input to physical output
+- Control a physical LEGO train using natural language commands. (e.g. "move forward", "move backward", "stop")
+- Powered by Amazon Bedrock to interpret user input and generate structured control instructions.
+- Real-time interaction between user input and hardware execution.
+- Converts unstructured human language into actionable device commands.
+- Demonstrates end-to-end AI-driven system from input to physical output.
 
 ### 🛠 Tech Stack
 
