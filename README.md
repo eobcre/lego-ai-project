@@ -74,4 +74,4 @@ You will need:
 - A backend service configured to communicate with Amazon Bedrock.
 - Proper environment variables and API access.
 
-> Note: This project was tested using a LEGO train equipped with a Powered Up Hub (#88009).
+> Note: This project was tested using a LEGO train equipped with a Powered Up Hub.
