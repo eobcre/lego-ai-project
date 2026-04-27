@@ -41,11 +41,22 @@ Output:
 
 ### 🛠 Tech Stack
 
-- Amazon Bedrock
+#### ▫️ Frontend
+
 - React
-- Node.js (Express.js)
 - Tailwind CSS
-- node-poweredup
+
+#### ▫️ Backend
+
+- Node.js / Express.js
+
+#### ▫️ AI
+- Amazon Bedrock (NLP)
+
+#### ▫️ IoT Control
+
+- [node-poweredup](https://github.com/nathankellenicki/node-poweredup) (LEGO device control)
+- Bluetooth
 
 ### ⌘ Supported Commands
 
@@ -62,4 +73,3 @@ You will need:
 - A LEGO train device with Bluetooth control.
 - A backend service configured to communicate with Amazon Bedrock.
 - Proper environment variables and API access.
-
