@@ -1,4 +1,4 @@
-# LLM-Powered IoT Control System for LEGO Train
+# AI-Powered LEGO Train Control System
 
 ### 🧠 How It Works
 
