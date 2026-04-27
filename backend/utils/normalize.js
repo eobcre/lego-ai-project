@@ -5,7 +5,7 @@
 */
 
 const DEFAULT_SPEED = 30;
-const DEFAULT_DURATION = 1000;
+const DEFAULT_DURATION = 2000;
 
 export async function normalize(parsed) {
   // parsed bedrock returns { "action": "forward" || "backward" || "stop" }
