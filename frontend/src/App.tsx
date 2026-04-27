@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Buttons from "./components/Buttons";
 import Input from "./components/Input";
+import bg from "./assets/bg.png";
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -18,15 +18,18 @@ const App = () => {
       const data = await res.json();
       setResult(data);
     } catch (e) {
-      setResult("Error.");
+      setResult("Connection Error...");
+    } finally {
+      setText("");
     }
   };
 
   return (
-    <div className="flex justify-center items-center w-full h-screen">
-      <div className="flex flex-col gap-8">
-        <Buttons />
-        <Input text={text} setText={setText} send={send} />
+    <div className="relative w-full overflow-hidden h-screen">
+      <img src={bg} alt="background" className="absolute inset-0 object-cover w-full h-full" />
+      <div className="relative z-10 flex flex-col justify-start items-center gap-4 pt-64 w-full">
+        <Input text={text} setText={setText} setResult={setResult} send={send} />
+        <p className="text-red-500 text-sm">{result}</p>
       </div>
     </div>
   );
