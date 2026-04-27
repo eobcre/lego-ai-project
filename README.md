@@ -70,6 +70,8 @@ This project requires specific hardware and environment setup to run.
 
 You will need:
 
-- A LEGO train device with Bluetooth control.
+- Powered Up Hub (#88009) to connect for Bluetooth connectivity.
 - A backend service configured to communicate with Amazon Bedrock.
 - Proper environment variables and API access.
+
+> Note: This project was tested using a LEGO train equipped with a Powered Up Hub (#88009).
