@@ -4,10 +4,7 @@
 
 The system will allow users to control a LEGO train using NLP.
 
-When a user enters a command such as "move forward" in the app, the request is sent to a backend API.  
-The backend then forwards the input to Amazon Bedrock, where the NLP is interpreted and transformed into a structured command. (e.g. MOVE FORWARD).  
-Once the structured command is returned, the backend maps it to a device specific instruction and sends it to LEGO train controller.  
-The command is connected via Bluetooth, allowing the train to execute the action in real time.
+When a user enters a command such as "move forward" in the app, the request is sent to a backend API. The backend then forwards the input to Amazon Bedrock, where the NLP is interpreted and transformed into a structured command. (e.g. MOVE FORWARD). Once the structured command is returned, the backend maps it to a device specific instruction and sends it to LEGO train controller. The command is connected via Bluetooth, allowing the train to execute the action in real time.
 
 ### Example Transformation
 
@@ -55,3 +52,15 @@ Output:
 - "Move forward"
 - "Move backward"
 - "Stop"
+
+### 📦 Installation
+
+This project requires specific hardware and environment setup to run.
+
+You will need:
+
+- A LEGO train device with Bluetooth control.
+- A backend service configured to communicate with Amazon Bedrock.
+- Proper environment variables and API access.
+
+> Note: BLE (Bluetooth Low Energy) access from Node.js may be unstable on macOS. The demo was tested in Windows.
