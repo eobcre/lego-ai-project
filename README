@@ -16,14 +16,6 @@ Input:
 
 Output:
 
-```
-{
-  "action": "forward",
-  "speed": 30,
-  "durationMs": 1000
-}
-```
-
 > Note: speed and duration are predefined as default parameters and are not controlled by user input.
 
 ### 🏗 Architecture
