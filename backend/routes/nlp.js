@@ -28,19 +28,19 @@ export const nlpRouter = (getTrain) => {
       }
 
       // bedrock process
-      // const answer = await bedrock(text);
-
+      const answer = await bedrock(text);
+      console.log("answer", answer);
       // test
-      const answer = await bedrockStub(text);
-      const answerParsed = JSON.parse(answer);
+      // const answer = await bedrockStub(text);
+      // const answerParsed = JSON.parse(answer);
+      // const normalized = await normalize(answerParsed);
+      const answerParsed = await normalize(JSON.parse(answer));
+      console.log("answerParsed:", answerParsed);
+      console.log("answerParsed.action:", answerParsed.action);
       const normalized = await normalize(answerParsed);
-      // const answerParsed = normalize(JSON.parse(answer));
-      // console.log("answerParsed:", answerParsed);
-      // console.log("answerParsed.action:", answerParsed.action);
 
       // speed
-      if (normalized.action === "forward")
-        await train.forward(normalized.speed);
+      if (normalized.action === "forward") await train.forward(normalized.speed);
       // durations ms
       await sleep(normalized.durationMs);
       await train.stop();
