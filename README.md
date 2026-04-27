@@ -1,5 +1,7 @@
 # AI-Powered LEGO Train Control System
 
+<img src="./docs/app.png" alt="Image" width="500" />
+
 ### 🧠 How It Works
 
 The system will allow users to control a LEGO train using NLP.
