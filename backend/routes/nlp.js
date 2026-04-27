@@ -17,7 +17,7 @@ export const nlpRouter = (getTrain) => {
   router.post("/nlp", async (req, res) => {
     try {
       const train = getTrain();
-      console.log("getTrain:", getTrain());
+      // console.log("getTrain:", getTrain());
       if (!train) {
         return res.status(503).json({ ok: false, error: "Train not ready." });
       }
@@ -57,6 +57,7 @@ export const nlpRouter = (getTrain) => {
           console.error("Unknown action:", normalized.action);
           await train.stop();
       }
+
       // durations ms
       await sleep(normalized.durationMs);
       await train.stop();
