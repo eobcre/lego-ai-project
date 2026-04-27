@@ -1,8 +1,5 @@
 import "dotenv/config";
-import {
-  BedrockRuntimeClient,
-  ConverseCommand,
-} from "@aws-sdk/client-bedrock-runtime";
+import { BedrockRuntimeClient, ConverseCommand } from "@aws-sdk/client-bedrock-runtime";
 
 /* 
 bedrock returns json format test
