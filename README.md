@@ -63,4 +63,3 @@ You will need:
 - A backend service configured to communicate with Amazon Bedrock.
 - Proper environment variables and API access.
 
-> Note: BLE (Bluetooth Low Energy) access from Node.js may be unstable on macOS. The demo was tested in Windows.
