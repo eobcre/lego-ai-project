@@ -15,12 +15,18 @@ const App = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ text }),
       });
+      
       const data = await res.json();
-      setResult(data);
-    } catch (e) {
+
+      if (!data.ok) {
+        setResult("Something went wrong");
+      } else {
+        setResult("");
+        setText("");
+      }
+
+    } catch (err) {
       setResult("Connection Error...");
-    } finally {
-      setText("");
     }
   };
 
